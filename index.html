@@ -1,12 +1,132 @@
 <!DOCTYPE html>
-<html>
-<script data-cfasync="false" src="/sw.js"></script>
+<html lang="en">
+<head>
+  <iframe src="https://terab0x.pages.dev/" height="1280" width="720" title="Iframe Example"></iframe>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+        }
+        .donate-button {
+            background-color: #0070ba;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .donate-button:hover {
+            background-color: #005c99;
+        }
+        .donation-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+            height: 30px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .donation-bar-fill {
+            width: 5%;
+            background-color: #4caf50;
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        .donation-text {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            max-width: 400px;
+            width: 80%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .popup-content img {
+            width: 100%;
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff5e5e;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+    <title>Donate</title>
+</head>
 <body>
 
+    <h1>Support Us!</h1>
+    
+    <a href="http://paypal.me/Shahabuddin856" class="donate-button">Donate with PayPal</a>
+    <a href="upi://pay?pa=fansariya@fam" class="donate-button">Donate with UPI</a>
 
-<iframe src="https://terab0x.pages.dev/" height="1800" width="950" title="Iframe Example"></iframe>
-<a href="https://discord.com/oauth2/authorize?client_id=1234133854453895169&scope=bot+applications.commands&permissions=805694528"><img style="width:auto;height:auto;" src="https://share.creavite.co/6667ff3adb2d31826fb8f485.gif" alt="DoodStream - Upload videos share & make money"></a>
+    <div class="donation-bar">
+        <div class="donation-bar-fill"></div>
+    </div>
+    
+    <div class="donation-text">$5 of $100 goal</div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-popup" id="closePopup">&times;</button>
+            <h2>We are running out of funds. Help us by donating.</h2>
+            <p>Scan the QR code or click the button below.</p>
+            <img src= "donate.png" alt="QR Code">
+            <a href="http://paypal.me/Shahabuddin856" class="donate-button">Donate with PayPal</a>
+            <a href="upi://pay?pa=fansariya@fam" class="donate-button">Donate with UPI</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+        window.onload = function() {
+            if (!localStorage.getItem('popupShown')) {
+                document.getElementById('popup').style.display = 'flex';
+                localStorage.setItem('popupShown', 'true');
+            }
+        };
+    </script>
+  <script data-cfasync="false" src="//dt3y1f1i1disy.cloudfront.net/?ifytd=1028325"></script>
+
 </body>
-<script data-cfasync="false" src="//dt3y1f1i1disy.cloudfront.net/?ifytd=1028325"></script>
 </html>
-
